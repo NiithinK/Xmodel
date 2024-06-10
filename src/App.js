@@ -34,8 +34,8 @@ function App() {
     let newErrors = {};
     if (!formData.username) newErrors.username = 'Username is required';
     if (!formData.email.includes('@')) newErrors.email = 'Invalid email. Please check your email address.';
-    if (formData.phone.length !== 10 || isNaN(formData.phone)) newErrors.phone = 'Invalid phone number. Please enter a 10-digit phone number.';
-    if (new Date(formData.dob) > new Date()) newErrors.dob = 'Invalid date of birth. Please enter a valid date of birth.';
+    if (formData.phone.length !== 10 || isNaN(formData.phone)) newErrors.phone = alert('Invalid phone number. Please enter a 10-digit phone number.');
+    if (new Date(formData.dob) > new Date()) newErrors.dob = alert('Invalid date of birth. Please enter a valid date of birth.');
     console.log(formData)
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
